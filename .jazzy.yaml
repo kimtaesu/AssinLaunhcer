@@ -1,0 +1,7 @@
+# AssinLaunhcer document generator jazzy settings
+
+copyright: Copyright 2019 Assin
+author: Assin
+xcodebuild_arguments: [-target, AssinLaunhcer-iOS]
+clean: true
+output: ./Documentation
