@@ -96,7 +96,6 @@
 		3D9C432A2274629C000A6585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D9C432F2274629C000A6585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB91AC4229AC263002668DA /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
-		3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitlab-ci.yml"; sourceTree = SOURCE_ROOT; };
 		3DB91AC6229AC272002668DA /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = SOURCE_ROOT; };
 		BD7B5078232E6618007F5FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD8CB23A23305519003D5BDE /* DMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMarkView.swift; sourceTree = "<group>"; };
@@ -212,7 +211,6 @@
 				3D9C42DA22745DB0000A6585 /* .swift-version */,
 				3D9C42D922745DAF000A6585 /* .swiftlint.yml */,
 				3DB91AC4229AC263002668DA /* .travis.yml */,
-				3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */,
 				3DB91AC6229AC272002668DA /* azure-pipelines.yml */,
 			);
 			path = Configs;
