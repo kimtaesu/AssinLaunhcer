@@ -29,11 +29,8 @@ extension DMarkView {
         let transform = CGAffineTransform(scaleX: resizedScale.x, y: resizedScale.y)
         let path = UIBezierPath()
         path.move (to: CGPoint(x: 236.84, y: 414.97).applying(transform))
-        
         path.addLine(to: CGPoint(x: 97.08, y: 414.97).applying(transform))
-        
         path.addLine(to: CGPoint(x: 97.08, y: 276.62).applying(transform))
-        
         UIColor.black.setStroke()
         path.lineWidth = 1
         path.miterLimit = 4
@@ -69,14 +66,15 @@ extension DMarkView {
         let resizedScale = ResizingScale(bounds: self.bounds.size, canvas: canvasSize)
         let transform = CGAffineTransform(scaleX: resizedScale.x, y: resizedScale.y)
         let dinline = UIBezierPath()
-        dinline.move(to: CGPoint (x: 221.17, y: 311.08).applying(transform))
-        dinline.addCurve(to: CGPoint(x: 220.13, y: 243.75).applying(transform), controlPoint1: CGPoint(x: 219.53, y: 309.6).applying(transform), controlPoint2: CGPoint(x: 219.75, y: 256.9).applying(transform))
-        dinline.addCurve(to: CGPoint(x: 221.17, y: 199.89).applying(transform), controlPoint1: CGPoint (x: 220.5, y: 230.59).applying(transform), controlPoint2: CGPoint(x: 221.52, y: 200.91).applying(transform))
-        dinline.addCurve(to: CGPoint(x: 268.98, y: 201.54).applying(transform), controlPoint1: CGPoint (x: 220.82, y: 198.87).applying(transform), controlPoint2: CGPoint(x: 247.96, y: 195.11).applying(transform))
-        dinline.addCurve(to: CGPoint(x: 300.4, y: 238.5).applying(transform), controlPoint1: CGPoint(x: 290.01, y: 207.99).applying(transform), controlPoint2: CGPoint (x: 299.21, y: 226.58).applying(transform))
-        dinline.addCurve (to: CGPoint(x: 296.02, y: 283).applying(transform), controlPoint1: CGPoint (x: 301.59, y: 250.43).applying(transform), controlPoint2: CGPoint (x: 302.31, y: 267.32).applying(transform))
-        dinline.addCurve(to: CGPoint(x: 262.83, y: 311.07).applying(transform), controlPoint1: CGPoint(x: 289.72, y: 298.68).applying(transform), controlPoint2: CGPoint(x: 272.92, y: 308.83).applying(transform))
-        dinline.addCurve(to: CGPoint(x: 221.17, y: 311.08).applying(transform), controlPoint1: CGPoint(x: 252.75, y: 313.32).applying(transform), controlPoint2: CGPoint(x: 222.81, y: 312.56).applying(transform))
+
+        dinline.move (to: CGPoint (x: 221.17, y: 306.42).applying(transform))
+        dinline.addCurve (to: CGPoint (x: 220.13, y: 245.61).applying(transform), controlPoint1: CGPoint (x: 219.53, y: 305.08).applying(transform), controlPoint2: CGPoint(x: 219.75, y: 257.49).applying(transform))
+        dinline.addCurve (to: CGPoint(x: 221.17, y: 206).applying(transform), controlPoint1: CGPoint(x: 220.51, y: 233.73).applying(transform), controlPoint2: CGPoint (x: 221.52, y: 206.92).applying(transform))
+        dinline.addCurve (to: CGPoint (x: 268.98, y: 207.5).applying(transform), controlPoint1: CGPoint (x: 220.82, y: 205.07).applying(transform), controlPoint2: CGPoint (x: 247.96, y: 201.68).applying(transform))
+        dinline.addCurve (to: CGPoint (x: 300.4, y: 240.88).applying(transform), controlPoint1: CGPoint (x: 290.01, y: 213.32).applying(transform), controlPoint2: CGPoint (x: 299.21, y: 230.1).applying(transform))
+        dinline.addCurve (to: CGPoint (x: 296.02, y: 281.07).applying(transform), controlPoint1: CGPoint (x: 301.59, y: 251.65).applying(transform), controlPoint2: CGPoint(x: 302.32, y: 266.91).applying(transform))
+        dinline.addCurve (to: CGPoint (x: 262.84, y: 306.42).applying(transform), controlPoint1: CGPoint(x: 289.72, y: 295.23).applying(transform), controlPoint2: CGPoint(x: 272.92, y: 304.39).applying(transform))
+        dinline.addCurve (to: CGPoint (x: 221.17, y: 306.42).applying(transform), controlPoint1: CGPoint (x: 252.75, y: 308.45).applying(transform), controlPoint2: CGPoint (x: 222.8, y: 307.76).applying(transform))
         dinline.close()
         UIColor.black.setStroke()
         dinline.fill()

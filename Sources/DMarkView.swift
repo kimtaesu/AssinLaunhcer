@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable open class DMarkView: UIView {
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
     }
@@ -22,9 +22,6 @@ import UIKit
     override public func layoutSubviews() {
         super.layoutSubviews()
         drawDMark()
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.3, qos: .userInitiated, flags: .barrier) {
-            self.startAnimation()
-        }
     }
 }
 
@@ -33,18 +30,20 @@ extension DMarkView {
         // [Unknown process name] CGContextRestoreGState: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0.0)
         if let _ = UIGraphicsGetCurrentContext() {
+            let lineWidth = self.bounds.width / 100
             let rectangle = CAShapeLayer()
             rectangle.path = makeRectanglePath().cgPath
-            rectangle.lineWidth = 3
+            rectangle.lineWidth = lineWidth
             rectangle.strokeEnd = 0
             rectangle.fillColor = UIColor.clear.cgColor
             rectangle.strokeColor = UIColor.black.cgColor
             rectangle.name = "rectangle"
             self.layer.addSublayer(rectangle)
 
+            let weight: CGFloat = 5
             let maskRectangle = CAShapeLayer()
             maskRectangle.path = makeMaskRectanglePath().cgPath
-            maskRectangle.lineWidth = 10
+            maskRectangle.lineWidth = lineWidth * weight
             maskRectangle.strokeEnd = 0
             maskRectangle.fillColor = UIColor.clear.cgColor
             maskRectangle.strokeColor = UIColor.white.cgColor
@@ -53,7 +52,7 @@ extension DMarkView {
 
             let DOutline = CAShapeLayer()
             DOutline.path = makeDOutlinePath().cgPath
-            DOutline.lineWidth = 3
+            DOutline.lineWidth = lineWidth
             DOutline.strokeEnd = 0
             DOutline.fillColor = UIColor.clear.cgColor
             DOutline.strokeColor = UIColor.black.cgColor
@@ -62,7 +61,7 @@ extension DMarkView {
 
             let DInline = CAShapeLayer()
             DInline.path = makeDInlinePath().cgPath
-            DInline.lineWidth = 3
+            DInline.lineWidth = lineWidth
             DInline.strokeStart = 0
             DInline.strokeEnd = 0
             DInline.fillColor = UIColor.white.cgColor
@@ -73,7 +72,9 @@ extension DMarkView {
         }
     }
 
-    func startAnimation() {
+    func startAnimation(_ block: @escaping (() -> Void)) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(block)
         self.layer.first(name: "rectangle") {
             $0.removeAllAnimations()
             let animationLayer = CABasicAnimation.createAnimationLayer(
@@ -122,6 +123,7 @@ extension DMarkView {
                 toValue: 1.0)
             $0.add(animationLayer, forKey: "d.inline.strokeEnd")
         }
+        CATransaction.commit()
     }
 }
 
