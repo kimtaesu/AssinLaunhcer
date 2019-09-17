@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable open class DMarkView: UIView {
+final public class DMarkView: UIView {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)

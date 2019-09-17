@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct ResizingScale {
+struct ResizingScale {
     let scales: CGPoint
     
     public init(bounds: CGSize, canvas: CGSize) {
